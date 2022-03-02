@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 * {
     margin: 0;
@@ -92,10 +93,10 @@ a.active, .anav:hover {
         display: block;
     }
     ul {
+        background-color: #515A5A;
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #4D4949;
         top: 80px;
         left: -100%;
         text-align: center;
@@ -116,4 +117,43 @@ a.active, .anav:hover {
     #check:checked ~ ul {
         left: 0;
     }
+}
+
+.text-white {
+    color: white;
+}
+
+.h2 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.atptour {
+
+    width: 100%;
+    margin: 20px auto auto auto;
+    display: flex;
+    justify-content: center;
+}
+
+#atptour {
+    width: 40%;
+    height: 40%;
+}
+
+.h3 {
+    font-size: 30px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#what-atp-div {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 5%;
 }
