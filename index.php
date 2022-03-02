@@ -1,8 +1,8 @@
 <?php
     require("debut.php");
 ?>
-<title>ATP Tennis | Home</title>
-
+    <title>ATP Tennis | Home</title>
+</head>
 <body>
     <header>
         <div class="logotxt logo">
@@ -17,7 +17,7 @@
                 <label class="logo">Tennis</label></a>
             <ul>
                 <li><a href="index.php" class="active anav">Accueil</a></li>
-                <li><a href="atp.php" class="anav">l'ATP</a></li>
+                <li><a href="listing.php" class="anav">l'ATP</a></li>
                 <li><a href="admin.php" class="anav" target="_blank">Administrateur</a></li>
                 <li><a href="form_recherche.php" class="anav">Recherche</a></li>
             </ul>

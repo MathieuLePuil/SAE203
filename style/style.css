@@ -92,7 +92,7 @@ a.active, .anav:hover {
     .checkbtn {
         display: block;
     }
-    ul {
+    nav ul {
         background-color: #515A5A;
         position: fixed;
         width: 100%;
@@ -156,4 +156,40 @@ a.active, .anav:hover {
     margin-top: 20px;
     width: 90%;
     margin-left: 5%;
+}
+
+/* FICHE JOUEUR */
+
+
+
+.classement {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.fiche_player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    text-align: center;
+    text-justify: inter-word;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 15px 0 15px 0;
+}
+.fiche_player img {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.fiche_player p {
+    margin-bottom: 10px;
+}
+
+.fiche_player h4 {
+    margin: 10px 0 10px 0;
 }

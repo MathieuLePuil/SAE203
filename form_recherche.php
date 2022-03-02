@@ -3,7 +3,7 @@ require("debut.php");
 ?>
     <title>ATP Tennis | Home</title>
 
-    <body>
+<body>
     <header>
         <div class="logotxt logo">
             <img src="assets/LOGO.png" alt="Logo de l'ATP" id="logohg" width="50" height="50">
@@ -17,7 +17,7 @@ require("debut.php");
                 <label class="logo">Tennis</label></a>
             <ul>
                 <li><a href="index.php" class="anav">Accueil</a></li>
-                <li><a href="atp.php" class="anav">l'ATP</a></li>
+                <li><a href="listing.php" class="anav">l'ATP</a></li>
                 <li><a href="admin.php" class="anav" target="_blank">Administrateur</a></li>
                 <li><a href="form_recherche.php" class="active anav">Recherche</a></li>
             </ul>
@@ -47,8 +47,6 @@ require("debut.php");
             </form>
         </p>
     </main>
-
-
 
 <?php
     require("fin.php");
