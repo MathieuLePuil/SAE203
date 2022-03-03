@@ -64,6 +64,36 @@
                 echo '<p>Pas de résultat !</p>';
             }
             echo '</div>';
+
+
+
+        $req = "SELECT * FROM atp_tournament"; // ou `voitures`
+        try {
+            // exécuter la requête
+            $resultat = $mabd->query($req);
+        } catch (PDOException $e) {
+            print "Erreur : ".$e->getMessage().'<br />';
+            die();
+        }
+
+        $winner = 'SELECT `player_firstname`,`player_lastname` FROM `atp_player` INNER JOIN atp_tournament ON atp_tournament.winner_id = atp_player.player_id WHERE tournoi_city=\'San Diego\';';
+
+        $lignes_resultat = $resultat->rowCount();
+        if ($lignes_resultat>0) { // y a-t-il des résultats ?
+            // oui : pour chaque résultat : afficher
+            echo '<div class="titre-section"><h2 class="text-white h2">Tournois ATP</h2></div>';
+            echo '<div class="classement">';
+            while($ligne = $resultat->fetch()) {
+                echo '<div class="fiche_player">';
+                echo '<img src="assets/player/'.$ligne['image_name'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="1080" width="1920">';
+                echo '<h4>'.$ligne['tournoi_city'].', '.$ligne['tournoi_countrie'].'</h4>';
+                echo '<p>Date : '.$ligne['tournoi_day'].' <br /> Type : '.$ligne['tournoi_type'].'</p></div>';
+                echo '<h4>'.$winner.'</h4>';
+            }
+        } else {
+            echo '<p>Pas de résultat !</p>';
+        }
+        echo '</div>';
             $mabd = null; // fermer la connexion
 
         ?>
