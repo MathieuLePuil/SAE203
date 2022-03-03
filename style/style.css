@@ -196,3 +196,16 @@ a.active, .anav:hover {
 .fiche_player h4 {
     margin: 10px 0 10px 0;
 }
+
+.titre-section::after {
+    content: "";
+    display: block;
+    height: 10px;
+    background: white;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.titre-section:hover::after {
+    transform: scale(1);
+}
