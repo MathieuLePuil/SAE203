@@ -85,7 +85,7 @@
             echo '<div class="classement">';
             while($ligne = $resultat->fetch()) {
                 echo '<div class="fiche_player">';
-                echo '<img src="assets/player/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="1080" width="1920">';
+                echo '<img src="assets/tournament/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="1080" width="1920">';
                 echo '<h4>'.$ligne['tournoi_city'].', '.$ligne['tournoi_countrie'].'</h4>';
                 echo '<p>Date : '.$ligne['tournoi_day'].' <br /> Type : '.$ligne['tournoi_type'].'</p></div>';
                 echo '<h4>'.$ligne['player_firstname'].'</h4>';
