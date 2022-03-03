@@ -196,16 +196,3 @@ h2 {
 .fiche_player h4 {
     margin: 10px 0 10px 0;
 }
-
-h2::after {
-    content: "";
-    display: block;
-    height: 10px;
-    background: white;
-    transform: scale(0);
-    transition: transform 0.2s ease-in-out;
-}
-
-h2:hover::after {
-    transform: scale(1);
-}
