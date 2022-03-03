@@ -1,4 +1,4 @@
-// ssh mmi21b12@mmi21b12.mmi-troyes.fr ./pullrequest.sh
+<!--ssh mmi21b12@mmi21b12.mmi-troyes.fr ./pullrequest.sh-->
 
 <?php
     require("debut.php");
