@@ -25,6 +25,9 @@
     </header>
 
     <main>
+        <div class="atptour">
+            <img src="assets/BANNER.png" alt="Image ATP Tour" id="atptour">
+        </div>
         <?php
             $UTIL='sae203';
             $PASS='Mageek51_';
@@ -49,7 +52,7 @@
             $lignes_resultat = $resultat->rowCount();
             if ($lignes_resultat>0) { // y a-t-il des résultats ?
                 // oui : pour chaque résultat : afficher
-                echo '<h2>Classement ATP</h2><ul>';
+                echo '<div class="titre-section"><h2 class="text-white h2">Classement ATP</h2></div>';
                 echo '<div class="classement">';
                 while($ligne = $resultat->fetch()) {
                     echo '<div class="fiche_player">';
