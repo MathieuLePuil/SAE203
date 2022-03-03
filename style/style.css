@@ -124,6 +124,7 @@ a.active, .anav:hover {
 }
 
 .h2 {
+    margin-top: 20px;
     font-size: 60px;
     display: flex;
     justify-content: center;
