@@ -67,7 +67,7 @@
 
 
 
-        $tournament = "SELECT `tournoi_city`, `player_firstname`, `image_name`, `tournoi_countrie`  FROM `atp_tournament`, `tournoi_day`, `tournoi_type` 
+        $tournament = "SELECT `tournoi_city`, `player_firstname`, `image_name`, `tournoi_countrie`, `tournoi_day`, `tournoi_type`  FROM `atp_tournament` 
 	                INNER JOIN atp_player
 	                ON atp_tournament.winner_id = atp_player.player_id";
         try {
