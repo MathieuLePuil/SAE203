@@ -49,7 +49,7 @@
             $lignes_resultat = $resultat->rowCount();
             if ($lignes_resultat>0) { // y a-t-il des résultats ?
                 // oui : pour chaque résultat : afficher
-                echo '<h2>TEST</h2><ul>';
+                echo '<h2>Classement ATP</h2><ul>';
                 echo '<div class="classement">';
                 while($ligne = $resultat->fetch()) {
                     echo '<div class="fiche_player">';
