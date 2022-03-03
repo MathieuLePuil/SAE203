@@ -88,7 +88,7 @@
                 echo '<img src="assets/tournament/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="112" width="200">';
                 echo '<h4>'.$ligne['tournoi_city'].', '.$ligne['tournoi_countrie'].'</h4>';
                 echo '<p>Date : '.$ligne['tournoi_day'].' <br /> Type : '.$ligne['tournoi_type'].'</p>';
-                echo '<h4>'.$ligne['player_firstname'].' '.$ligne['player_lastname'].'</h4></div>';
+                echo '<h4> 🏆'.$ligne['player_firstname'].' '.$ligne['player_lastname'].'</h4></div>';
             }
         } else {
             echo '<p>Pas de résultat !</p>';
