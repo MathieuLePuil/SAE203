@@ -197,7 +197,7 @@ a.active, .anav:hover {
     margin: 10px 0 10px 0;
 }
 
-.titre-section::after {
+h2::after {
     content: "";
     display: block;
     height: 10px;
@@ -206,6 +206,6 @@ a.active, .anav:hover {
     transition: transform 0.2s ease-in-out;
 }
 
-.titre-section:hover::after {
+h2:hover::after {
     transform: scale(1);
 }
