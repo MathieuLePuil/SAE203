@@ -169,7 +169,7 @@ a.active, .anav:hover {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .fiche_player {
