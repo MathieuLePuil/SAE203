@@ -165,10 +165,11 @@ a.active, .anav:hover {
 
 
 .classement {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-right: 5%;
 }
 
 .fiche_player {
