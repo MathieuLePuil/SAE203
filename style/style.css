@@ -126,7 +126,7 @@ a.active, .anav:hover {
 h2 {
     margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 60px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
 }
@@ -171,10 +171,17 @@ h2 {
     flex-wrap: wrap;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 540px) {
     .classement {
         width: 90%;
         margin-left: 5%;
+    }
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
     }
 }
 
