@@ -237,6 +237,9 @@ form {
     justify-content: space-around;
     margin-bottom: 45px;
     margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
 }
 
 form input {
@@ -244,4 +247,8 @@ form input {
     border-radius: 5px;
     margin: 15px 0 15px 0;
     background-color: transparent;
+}
+
+.form_search {
+    width: 100%;
 }
