@@ -29,35 +29,37 @@ require("debut.php");
         <div class="form_search">
         <p>
             <form action="form_recherche.php" data-parsley-validate>
-                <div class="item_search">
-                    <label for="real">Nom :</label>
-                    <input type="search" list="tennis_players" id="player" name="player" placeholder="Nom du joueur" />
-                    <datalist id="tennis_players">
-                        <option value="Medvedev">
-                        <option value="Djokovic">
-                        <option value="Zverev">
-                        <option value="Nadal">
-                        <option value="Tsitsipas">
-                        <option value="Berrettini">
-                        <option value="Rublev">
-                        <option value="Ruud">
-                        <option value="Auger-Aliassime">
-                        <option value="Sinner">
-                    </datalist>
-                </div>
-                <div class="item_search">
-                    <label for="point_mini"> Âge : </label>
-                    <input type="number" id="age" name="age" data-parsley-length="[1, 40]" data-parsley-type="integer">
-                </div>
-                <div class="item_search">
-                    <label for="point_mini">Classement ATP : </label>
-                    <input type="number" id="classement" name="classement" data-parsley-length="[1, 50]" data-parsley-type="integer">
-                </div>
-                <div class="item_search">
-                    <label for="point_mini">Point ATP : </label>
-                    <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" data-parsley-type="integer">
-                </div>
-                <input class="btn btn-primary" type="submit" value="Rechercher" id="submit">
+                <section>
+                    <div class="item_search">
+                        <label for="real">Nom :</label>
+                        <input type="search" list="tennis_players" id="player" name="player" placeholder="Nom du joueur" />
+                        <datalist id="tennis_players">
+                            <option value="Medvedev">
+                            <option value="Djokovic">
+                            <option value="Zverev">
+                            <option value="Nadal">
+                            <option value="Tsitsipas">
+                            <option value="Berrettini">
+                            <option value="Rublev">
+                            <option value="Ruud">
+                            <option value="Auger-Aliassime">
+                            <option value="Sinner">
+                        </datalist>
+                    </div>
+                    <div class="item_search">
+                        <label for="point_mini"> Âge : </label>
+                        <input type="number" id="age" name="age" data-parsley-length="[1, 40]" data-parsley-type="integer">
+                    </div>
+                    <div class="item_search">
+                        <label for="point_mini">Classement ATP : </label>
+                        <input type="number" id="classement" name="classement" data-parsley-length="[1, 50]" data-parsley-type="integer">
+                    </div>
+                    <div class="item_search">
+                        <label for="point_mini">Point ATP : </label>
+                        <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" data-parsley-type="integer">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Rechercher" id="submit">
+                </section>
             </form>
         </p>
         </div>
