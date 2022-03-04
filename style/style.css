@@ -67,6 +67,7 @@ nav ul li a {
 
 a.active, .anav:hover {
     background: #00aff0;
+    color: black;
     transition: .5s;
 }
 
