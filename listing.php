@@ -81,7 +81,7 @@
         $lignes_resultat = $resultat->rowCount();
         if ($lignes_resultat>0) { // y a-t-il des résultats ?
             // oui : pour chaque résultat : afficher
-            echo '<div class="titre-section"><h2 class="text-white h2">Tournois ATP</h2></div>';
+            echo '<div class="titre-section"><h2 class="text-white mgtoptournoi h2">Tournois ATP</h2></div>';
             echo '<div class="classement">';
             while($ligne = $resultat->fetch()) {
                 echo '<div class="fiche_player">';

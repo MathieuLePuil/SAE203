@@ -124,6 +124,8 @@ a.active, .anav:hover {
     color: white;
 }
 
+
+
 h2 {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -221,4 +223,8 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.mgtoptournoi {
+    margin-top: 100px;
 }
