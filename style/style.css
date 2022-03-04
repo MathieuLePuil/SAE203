@@ -228,3 +228,11 @@ footer{
 .mgtoptournoi {
     margin-top: 100px;
 }
+
+/* FORMULAIRE RECHERCHE */
+
+.form_search {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
