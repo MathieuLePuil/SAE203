@@ -232,7 +232,6 @@ footer{
 /* FORMULAIRE RECHERCHE */
 
 form {
-    width: 40%;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -243,7 +242,6 @@ form {
 }
 
 form input {
-    width: 100%;
     border: 2px solid black;
     border-radius: 5px;
     margin: 15px 0 15px 0;
