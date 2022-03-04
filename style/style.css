@@ -256,3 +256,7 @@ form input {
     box-sizing: border-box;
     margin-bottom: 20px;
 }
+
+#classement {
+    width: 100%;
+}
