@@ -32,7 +32,7 @@ require("debut.php");
                 <section class="formsearch">
                     <div class="item_search">
                         <label for="real">Nom :</label>
-                        <input type="search" list="tennis_players" id="player" name="player" placeholder="Nom du joueur" />
+                        <input type="search" list="tennis_players" id="player" name="player" placeholder="  Nom du joueur" />
                         <datalist id="tennis_players">
                             <option value="Medvedev">
                             <option value="Djokovic">
@@ -48,15 +48,15 @@ require("debut.php");
                     </div>
                     <div class="item_search">
                         <label for="age""> Âge : </label>
-                        <input type="number" id="age" name="age" data-parsley-length="[1, 40]" placeholder="Âge du joueur" data-parsley-type="integer">
+                        <input type="number" id="age" name="age" data-parsley-length="[1, 40]" placeholder="  Âge du joueur" data-parsley-type="integer">
                     </div>
                     <div class="item_search">
                         <label for="classement">Classement ATP : </label>
-                        <input type="number" id="classement" name="classement" data-parsley-length="[1, 50]" placeholder="Classement du joueur" data-parsley-type="integer">
+                        <input type="number" id="classement" name="classement" data-parsley-length="[1, 50]" placeholder="  Classement du joueur" data-parsley-type="integer">
                     </div>
                     <div class="item_search">
                         <label for="atp_point">Point ATP : </label>
-                        <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" placeholder="Points du joueur" data-parsley-type="integer">
+                        <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" placeholder="  Points du joueur" data-parsley-type="integer">
                     </div>
                     <input class="btn btn-primary" type="submit" value="Rechercher" id="submit">
                 </section>
