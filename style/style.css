@@ -113,7 +113,7 @@ a.active, .anav:hover {
     }
     a:hover,a.active {
         background: #00aff0;
-        color: white;
+        color: black;
     }
     #check:checked ~ ul {
         left: 0;
