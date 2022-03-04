@@ -29,7 +29,7 @@ require("debut.php");
         <div class="form_search">
         <p>
             <form action="form_recherche.php" data-parsley-validate>
-                <div>
+                <div class="item_search">
                 <label for="real">Nom :</label>
                 <input type="search" list="tennis_players" id="player" name="player" />
                 <datalist id="tennis_players">
@@ -45,15 +45,15 @@ require("debut.php");
                     <option value="Sinner">
                 </datalist>
                 </div>
-                <div>
+                <div class="item_search">
                     <label for="point_mini"> Âge : </label>
                     <input type="number" id="age" name="age" value="25" data-parsley-length="[1, 40]" data-parsley-type="integer">
                 </div>
-                <div>
+                <div class="item_search">
                     <label for="point_mini">Classement ATP : </label>
                     <input type="number" id="classement" name="classement" value="1" data-parsley-length="[1, 50]" data-parsley-type="integer">
                 </div>
-                <div>
+                < class="item_search">
                     <label for="point_mini">Point ATP : </label>
                     <input type="number" id="atp_point" name="atp_point" value="1000" data-parsley-length="[1, 10000]" data-parsley-type="integer">
                 </div>
