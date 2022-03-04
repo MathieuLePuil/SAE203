@@ -58,7 +58,7 @@ require("debut.php");
                         <label for="email">Classement ATP :</label>
                         <input type="number" id="classement" name="classement" value="1" data-parsley-length="[1, 50]" data-parsley-type="integer"><br>
                         <label for="message" id="txt-message"> Point ATP : </label><br>
-                        <textarea name="number" id="message" placeholder=" Votre message"></textarea><br>
+                        <input type="number" id="point" name="point" value="1000" data-parsley-length="[1, 10000]" data-parsley-type="integer">
                         <button type="submit" class="btnPopup" id="btnPopup">Envoyer</button>
                     </section>
                 </div>
