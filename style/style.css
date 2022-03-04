@@ -236,7 +236,6 @@ footer{
     color: white;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     vertical-align: middle;
     margin-bottom: 45px;
     margin-top: 30px;
