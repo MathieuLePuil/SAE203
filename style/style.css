@@ -231,18 +231,14 @@ footer{
 
 /* FORMULAIRE RECHERCHE */
 
-.form_search {
+.formulaire {
+    width: 100%;
+    color: white;
+    z-index: 9;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 15px 0 15px 0;
-    background-color: #D8D6D6;
-    width: 30%;
-}
-
-.item_search {
-    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 45px;
+    margin-top: 30px;
 }
