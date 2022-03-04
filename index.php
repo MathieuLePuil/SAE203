@@ -16,7 +16,7 @@
                 <i class="fa-solid fa-bars"></i>
             </label>
             <a href="http://mmi21b12.sae203.ovh/index.php">
-                <label class="logo">HOME</label></a>
+                <label class="logo">TENNIS</label></a>
             <ul>
                 <li><a href="index.php" class="active anav">Accueil</a></li>
                 <li><a href="listing.php" class="anav">l'ATP</a></li>
