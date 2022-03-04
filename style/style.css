@@ -245,4 +245,5 @@ form input {
     border: 2px solid black;
     border-radius: 5px;
     margin: 15px 0 15px 0;
+    background-color: transparent;
 }
