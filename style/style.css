@@ -231,7 +231,7 @@ footer{
 
 /* FORMULAIRE RECHERCHE */
 
-.formulaire {
+form {
     width: 100%;
     color: white;
     display: flex;
