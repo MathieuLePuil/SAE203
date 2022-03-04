@@ -28,7 +28,7 @@ require("debut.php");
         <h2 class="text-white h2">Rechercher un joueur</h2>
         <div class="form_search">
         <p>
-            <form action="form_recherche.php" data-parsley-validate>
+            <form action="reponse_recherche.php" data-parsley-validate>
                 <section class="formsearch">
                     <div class="item_search">
                         <label for="real">Nom :</label>
