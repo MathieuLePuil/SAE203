@@ -38,7 +38,7 @@ require("debut.php");
                             </div>
                             <div class="contactClass">
                                 <label for="nom">Nom :</label>
-                                <input type="search" list="tennis_players" id="player" name="player" /><br>
+                                <input type="search" list="tennis_players" id="nom" name="nom" placeholder="Nom du joueur" /><br>
                                 <datalist id="tennis_players">
                                     <option value="Medvedev">
                                     <option value="Djokovic">
