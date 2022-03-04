@@ -244,6 +244,10 @@ form {
     height: 80%;
 }
 
+.formsearch {
+    width: 300px;
+}
+
 form input {
     border: 2px solid black;
     border-radius: 5px;

@@ -29,7 +29,7 @@ require("debut.php");
         <div class="form_search">
         <p>
             <form action="form_recherche.php" data-parsley-validate>
-                <section>
+                <section class="formsearch">
                     <div class="item_search">
                         <label for="real">Nom :</label>
                         <input type="search" list="tennis_players" id="player" name="player" placeholder="Nom du joueur" />
