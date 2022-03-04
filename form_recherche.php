@@ -53,7 +53,7 @@ require("debut.php");
                     <label for="point_mini">Classement ATP : </label>
                     <input type="number" id="classement" name="classement" value="1" data-parsley-length="[1, 50]" data-parsley-type="integer">
                 </div>
-                < class="item_search">
+                <div class="item_search">
                     <label for="point_mini">Point ATP : </label>
                     <input type="number" id="atp_point" name="atp_point" value="1000" data-parsley-length="[1, 10000]" data-parsley-type="integer">
                 </div>
