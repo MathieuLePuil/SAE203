@@ -240,3 +240,10 @@ form {
     margin-bottom: 45px;
     margin-top: 30px;
 }
+
+form input {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 15px 0 15px 0;
+    background-color: #D8D6D6;
+}
