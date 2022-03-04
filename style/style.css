@@ -261,7 +261,7 @@ form input {
     margin-bottom: 20px;
 }
 
-#classement {
+#classement, #player, #age, #atp_point {
     width: 100%;
 }
 
