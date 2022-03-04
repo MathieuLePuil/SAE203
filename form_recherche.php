@@ -49,5 +49,6 @@ require("debut.php");
     </main>
 
 <?php
+    require("footer.php");
     require("fin.php");
 ?>

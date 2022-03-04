@@ -103,5 +103,6 @@
 
 
 <?php
+    require("footer.php");
     require("fin.php");
 ?>
