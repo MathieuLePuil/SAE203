@@ -58,7 +58,7 @@ require("debut.php");
                         <label for="atp_point">Point ATP : </label>
                         <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" placeholder="  Points du joueur" data-parsley-type="integer">
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Rechercher" id="submit">
+                    <input class="btn btn-primary" type="submit" value="RECHERCHER" id="submit">
                 </section>
             </form>
         </p>
