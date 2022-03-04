@@ -263,6 +263,7 @@ form input {
 
 #classement, #player, #age, #atp_point {
     width: 100%;
+    color: white;
 }
 
 #submit {
