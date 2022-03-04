@@ -252,4 +252,5 @@ form input {
 
 .form_search {
     width: 100%;
+    box-sizing: border-box;
 }
