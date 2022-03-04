@@ -1,7 +1,7 @@
 <?php
 require("debut.php");
 ?>
-    <title>ATP Tennis | Home</title>
+    <title>ATP Tennis | Recherche</title>
 
 <body>
     <header>
