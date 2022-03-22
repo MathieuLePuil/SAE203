@@ -18,7 +18,7 @@ require("debut.php");
             <ul>
                 <li><a href="index.php" class="anav">Accueil</a></li>
                 <li><a href="listing.php" class="anav">l'ATP</a></li>
-                <li><a href="admin.php" class="anav" target="_blank">Administrateur</a></li>
+                <li><a href="admin/admin.php" class="anav" target="_blank">Administrateur</a></li>
                 <li><a href="form_recherche.php" class="active anav">Recherche</a></li>
             </ul>
         </nav>
@@ -28,41 +28,25 @@ require("debut.php");
         <h2 class="text-white h2">Rechercher un joueur</h2>
         <div class="form_search">
         <p>
-            <form action="reponse_recherche.php" data-parsley-validate>
+            <form action="reponse_recherche.php" method="POST" data-parsley-validate>
                 <section class="formsearch">
                     <div class="item_search">
                         <label for="real">Nom :</label>
                         <input type="search" list="tennis_players" id="player" name="player" placeholder="  Nom du joueur" />
                         <datalist id="tennis_players">
-                            <option value="Medvedev">
-                            <option value="Djokovic">
-                            <option value="Zverev">
-                            <option value="Nadal">
-                            <option value="Tsitsipas">
-                            <option value="Berrettini">
-                            <option value="Rublev">
-                            <option value="Ruud">
-                            <option value="Auger-Aliassime">
-                            <option value="Sinner">
+                            <?php
+                            // On va afficher ici la datalist
+                            require 'lib_crud.inc.php';
+                            $co=connexionBD();
+                            genererDatalistJoueur($co);
+                            ?>
                         </datalist>
-                    </div>
-                    <div class="item_search">
-                        <label for="age""> Âge : </label>
-                        <input type="number" id="age" name="age" data-parsley-length="[1, 40]" placeholder="  Âge du joueur" data-parsley-type="integer">
-                    </div>
-                    <div class="item_search">
-                        <label for="classement">Classement ATP : </label>
-                        <input type="number" id="classement" name="classement" data-parsley-length="[1, 50]" placeholder="  Classement du joueur" data-parsley-type="integer">
-                    </div>
-                    <div class="item_search">
-                        <label for="atp_point">Point ATP : </label>
-                        <input type="number" id="atp_point" name="atp_point" data-parsley-length="[1, 10000]" placeholder="  Points du joueur" data-parsley-type="integer">
-                    </div>
                     <input class="btn btn-primary" type="submit" value="RECHERCHER" id="submit">
                 </section>
             </form>
         </p>
         </div>
+
     </main>
 
 <?php
