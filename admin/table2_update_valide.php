@@ -3,6 +3,7 @@ require '../debut.php';
 ?>
 <title>ATP Tennis | Administrateur</title>
 <link rel="stylesheet" href="../style/style.css">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/LOGO.png">
 </head>
 <body>
 <header>
@@ -36,30 +37,35 @@ require '../debut.php';
         $date=$_POST['date'];
         $type=$_POST['type'];
         $gagnant=$_POST['gagnant'];
+        $co=connexionBD();
 
-        $imageType=$_FILES["photo"]["type"];
-        if ( ($imageType != "image/png") &&
-            ($imageType != "image/jpg") &&
-            ($imageType != "image/jpeg") &&
-            ($imageType != "image/webp") ) {
-            echo '<p>Désolé, le type d\'image n\'est pas reconnu ! Seuls les formats PNG, Webp et JPEG sont autorisés.</p>'."\n";
-            die();
-        }
-
-        $nouvelleImage = date("Y_m_d_H_i_s")."---".$_FILES["photo"]["name"];
-
-        if(is_uploaded_file($_FILES["photo"]["tmp_name"])) {
-            if(!move_uploaded_file($_FILES["photo"]["tmp_name"], "../images/uploads/".$nouvelleImage)) {
-                echo '<p>Problème avec la sauvegarde de l\'image, désolé...</p>'."\n";
+        if ($_FILES["photo"]["type"] == NULL) {
+            modifierTournoiSansImage($co, $id, $pays, $ville, $date, $type, $gagnant);
+        } else {
+            $imageType=$_FILES["photo"]["type"];
+            if ( ($imageType != "image/png") &&
+                ($imageType != "image/jpg") &&
+                ($imageType != "image/jpeg") &&
+                ($imageType != "image/webp") ) {
+                echo '<p>Désolé, le type d\'image n\'est pas reconnu ! Seuls les formats PNG, Webp et JPEG sont autorisés.</p>'."\n";
                 die();
             }
-        } else {
-            echo '<p>Problème : image non chargée...</p>'."\n";
-            die();
-        }
 
-        $co=connexionBD();
-        modifierTournoi($co, $id, $pays, $ville, $date, $type, $gagnant, $nouvelleImage);
+            $nouvelleImage = date("Y_m_d_H_i_s")."---".$_FILES["photo"]["name"];
+
+            if(is_uploaded_file($_FILES["photo"]["tmp_name"])) {
+                if(!move_uploaded_file($_FILES["photo"]["tmp_name"], "../images/uploads/".$nouvelleImage)) {
+                    echo '<p>Problème avec la sauvegarde de l\'image, désolé...</p>'."\n";
+                    die();
+                }
+            } else {
+                echo '<p>Problème : image non chargée...</p>'."\n";
+                die();
+            }
+
+
+            modifierTournoi($co, $id, $pays, $ville, $date, $type, $gagnant, $nouvelleImage);
+        }
         deconnexionBD($co);
     ?>
 </main>

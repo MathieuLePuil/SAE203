@@ -3,6 +3,7 @@ require '../debut.php';
 ?>
 <title>ATP Tennis | Administrateur</title>
 <link rel="stylesheet" href="../style/style.css">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/LOGO.png">
 </head>
 <body>
 <header>
@@ -46,7 +47,7 @@ require '../debut.php';
             Taille : <input type="text" name="taille" value="<?= $joueur['player_height'] ?>" required><br />
             Classement : <input type="number" name="classement" min="0" max="1000" step="1" value="<?= $joueur['player_atprank'] ?>" required /><br />
             Points ATP : <input type="number" name="point" min="0" max="15000" step="1" value="<?= $joueur['player_atppoint'] ?>" required /><br />
-            Image : <input type="file" name="photo" value="../img/bds/<?= $joueur['image_name'] ?>" required /><br />
+            Image : <input type="file" name="photo" value="../img/bds/<?= $joueur['image_name'] ?>" /><br />
             <input type="submit" value="Modifier" class="button_add" />
         </form>
     </div>

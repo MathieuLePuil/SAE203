@@ -223,6 +223,25 @@ function modifierJoueur($mabd, $id, $prenom, $nom, $nation, $age, $taille, $clas
     }
 }
 
+function modifierJoueurSansImage($mabd, $id, $prenom, $nom, $nation, $age, $taille, $classement, $point)
+{
+    $req = "UPDATE `atp_player` SET `player_id` = '".$classement."', `player_firstname` = '".$prenom."', `player_lastname` = '".$nom."', `player_nation` = '".$nation."', `player_age` = ".$age.", `player_height` = '".$taille."', `player_atprank` = ".$classement.", `player_atppoint` = ".$point." WHERE player_id =".$id;
+
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    if ($resultat->rowCount() == 1) {
+        echo '<p>Le joueur ' . $nom . ' a été modifié.</p>' . "\n";
+    } else {
+        echo '<p>Erreur lors de la modification.</p>' . "\n";
+        die();
+    }
+}
+
 // Tournois
 
 function afficherTournoiOptions($mabd) {
@@ -256,7 +275,7 @@ function ajouterTournoi($mabd, $countrie, $city, $date, $type, $gagnant, $image)
         die();
     }
     if ($resultat->rowCount() == 1) {
-        echo '<p>Le joueur ' . $countrie . ', '. $city . ' a été ajoutée au catalogue.</p>' . "\n";
+        echo '<p>Le tournoi de ' . $countrie . ' en '. $city . ' a été ajoutée à la liste.</p>' . "\n";
     } else {
         echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
         die();
@@ -273,7 +292,7 @@ function effaceTournoi($mabd, $id) {
         die();
     }
     if ($resultat->rowCount()==1) {
-        echo '<p>Le joueur '.$id.' a été supprimé du catalogue.</p>'."\n";
+        echo '<p>Le tournoi '.$id.' a été supprimé du catalogue.</p>'."\n";
     } else {
         echo '<p>Erreur lors de la suppression.</p>'."\n";
         die();
@@ -298,6 +317,24 @@ function getTournoi($mabd, $idTournoi) {
 function modifierTournoi($mabd, $id, $countrie, $city, $date, $type, $gagnant, $image)
 {
     $req = "UPDATE `atp_tournament` SET `tournoi_countrie` = '".$countrie."', `tournoi_city` = '".$city."', `tournoi_day` = '".$date."', `winner_id` = '".$gagnant."', `tournoi_type` = '".$type."', `image_name_tournament` = '".$image."' WHERE tournoi_id =".$id;
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    if ($resultat->rowCount() == 1) {
+        echo '<p>Le tournoi de ' . $city . ' a été modifié.</p>' . "\n";
+    } else {
+        echo '<p>Erreur lors de la modification.</p>' . "\n";
+        die();
+    }
+}
+
+function modifierTournoiSansImage($mabd, $id, $countrie, $city, $date, $type, $gagnant)
+{
+    $req = "UPDATE `atp_tournament` SET `tournoi_countrie` = '".$countrie."', `tournoi_city` = '".$city."', `tournoi_day` = '".$date."', `winner_id` = '".$gagnant."', `tournoi_type` = '".$type."' WHERE tournoi_id =".$id;
     try {
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {

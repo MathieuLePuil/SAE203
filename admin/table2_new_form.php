@@ -3,6 +3,7 @@
 ?>
 <title>ATP Tennis | Administrateur</title>
 <link rel="stylesheet" href="../style/style.css">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/LOGO.png">
 </head>
 <body>
 <header>

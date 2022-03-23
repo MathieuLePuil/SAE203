@@ -15,7 +15,7 @@
             <label for="check" class="checkbtn">
                 <i class="fa-solid fa-bars"></i>
             </label>
-            <a href="http://mmi21b12.sae203.ovh/index.php">
+            <a href="https://mmi21b12.sae203.ovh/index.php">
                 <label class="logo">TENNIS</label></a>
             <ul>
                 <li><a href="index.php" class="active anav">Accueil</a></li>

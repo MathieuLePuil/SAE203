@@ -3,6 +3,7 @@ require '../debut.php';
 ?>
 <title>ATP Tennis | Administrateur</title>
 <link rel="stylesheet" href="../style/style.css">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/LOGO.png">
 </head>
 <body>
 <header>
@@ -64,7 +65,7 @@ require '../debut.php';
                     deconnexionBD($co);
                 ?>
             </select><br />
-            Image : <input type="file" name="photo" required /><br />
+            Image : <input type="file" name="photo" /><br />
             <input type="submit" value="Ajouter" class="button_add" />
         </form>
     </div>
