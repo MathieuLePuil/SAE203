@@ -25,16 +25,18 @@
     </header>
 
     <main>
-        <div class="atptour">
-            <img src="assets/BANNER.png" alt="Image ATP Tour" id="atptour">
-        </div>
-        <?php
-            require 'lib_crud.inc.php';
-            $co=connexionBD();
-            afficherJoueur($co);
-            afficherTournoi($co);
-            deconnexionBD($co); // fermer la connexion
-        ?>
+        <section>
+            <div class="atptour">
+                <img src="assets/BANNER.png" alt="Image ATP Tour" id="atptour">
+            </div>
+            <?php
+                require 'lib_crud.inc.php';
+                $co=connexionBD();
+                afficherJoueur($co);
+                afficherTournoi($co);
+                deconnexionBD($co); // fermer la connexion
+            ?>
+        </section>
     </main>
 
 
