@@ -26,33 +26,32 @@ require '../debut.php';
 </header>
 <main>
     <a class="back-gestion" href="admin.php">< Revenir à la page de gestion</a>
-    <div class="titre-section"><h2 class="text-white">Ajout d'un tournoi</h2></div>
+    <div class="titre-section"><h2 class="text-white">Modification d'un joueur</h2></div>
     <?php
         require '../lib_crud.inc.php';
 
-        $countrie=$_POST['pays'];
-        $city=$_POST['ville'];
-        $date=$_POST['date'];
-        $type=$_POST['type'];
-        $gagnant=$_POST['gagnant'];
-        // var_dump($_POST);
-        // var_dump($_FILES);
+        $id=$_POST['num'];
+        $prenom=$_POST['prenom'];
+        $nom=$_POST['nom'];
+        $nation=$_POST['nation'];
+        $age=$_POST['age'];
+        $taille=$_POST['taille'];
+        $classement=$_POST['classement'];
+        $point=$_POST['point'];
 
         $imageType=$_FILES["photo"]["type"];
         if ( ($imageType != "image/png") &&
             ($imageType != "image/jpg") &&
             ($imageType != "image/jpeg") &&
             ($imageType != "image/webp") ) {
-            echo '<p>Désolé, le type d\'image n\'est pas reconnu !';
-            echo 'Seuls les formats PNG, Webp et JPEG sont autorisés.</p>'."\n";
+            echo '<p>Désolé, le type d\'image n\'est pas reconnu ! Seuls les formats PNG, Webp et JPEG sont autorisés.</p>'."\n";
             die();
         }
 
         $nouvelleImage = date("Y_m_d_H_i_s")."---".$_FILES["photo"]["name"];
 
         if(is_uploaded_file($_FILES["photo"]["tmp_name"])) {
-            if(!move_uploaded_file($_FILES["photo"]["tmp_name"],
-                "../images/uploads/".$nouvelleImage)) {
+            if(!move_uploaded_file($_FILES["photo"]["tmp_name"], "../images/uploads/".$nouvelleImage)) {
                 echo '<p>Problème avec la sauvegarde de l\'image, désolé...</p>'."\n";
                 die();
             }
@@ -62,7 +61,7 @@ require '../debut.php';
         }
 
         $co=connexionBD();
-        ajouterTournoi($co, $countrie, $city, $date, $type, $gagnant, $nouvelleImage);
+        modifierJoueur($co, $id, $prenom, $nom, $nation, $age, $taille, $classement, $point, $nouvelleImage);
         deconnexionBD($co);
     ?>
 </main>

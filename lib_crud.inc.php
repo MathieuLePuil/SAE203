@@ -51,7 +51,7 @@ function afficherJoueur($mabd)
         echo '<div class="classement">';
         while ($ligne = $resultat->fetch()) {
             echo '<div class="fiche_player">';
-            echo '<img src="img/bds/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
+            echo '<img src="images/uploads/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
             echo '<h4>' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '</h4>';
             echo '<p>Pays : ' . $ligne['player_nation'] . ' <br /> Âge : ' . $ligne['player_age'] . ' <br /> Taille : ' . $ligne['player_height'] . ' <br /> Classement ATP : ' . $ligne['player_atprank'] . ' <br /> Point ATP : ' . $ligne['player_atppoint'] . '</p></div>';
         }
@@ -78,7 +78,7 @@ function afficherTournoi($mabd) {
         echo '<div class="classement">';
         while($ligne = $resultat->fetch()) {
             echo '<div class="fiche_player">';
-            echo '<img src="img/bds/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="112" width="200">';
+            echo '<img src="images/uploads/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="112" width="200">';
             echo '<h4>'.$ligne['tournoi_city'].', '.$ligne['tournoi_countrie'].'</h4>';
             echo '<p>Date : '.$ligne['tournoi_day'].' <br /> Type : '.$ligne['tournoi_type'].'</p>';
             echo '<h4> 🏆'.$ligne['player_firstname'].' '.$ligne['player_lastname'].'</h4></div>';
@@ -105,7 +105,7 @@ function afficherListeJoueur($mabd) {
             echo '<div class="classement">';
             while ($ligne = $resultat->fetch()) {
                 echo '<div class="fiche_player">';
-                echo '<img src="../img/bds/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
+                echo '<img src="../images/uploads/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
                 echo '<h4>' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '</h4>';
                 echo '<p>Pays : ' . $ligne['player_nation'] . ' <br /> Âge : ' . $ligne['player_age'] . ' <br /> Taille : ' . $ligne['player_height'] . ' <br /> Classement ATP : ' . $ligne['player_atprank'] . ' <br /> Point ATP : ' . $ligne['player_atppoint'] . ' <br /> <a href="table1_update_form.php?num='.$ligne['player_id'].'">Modifier</a> <br /> <a href="table1_delete.php?num=' .$ligne['player_id'].'">Supprimer</a> </p></div>';
             }
@@ -128,10 +128,30 @@ function afficherJoueurOptions($mabd) {
     // pour chaque auteur, on met son id, son prénom et son nom
     // dans une balise <option>
     foreach ($resultat as $value) {
-        echo '<option value="'.$value['player_id'].'">'; // id de l'auteur
-            echo $value['player_firstname'].' '.$value['player_lastname']; // prénom espace nom
-            echo '</option>'."\n";
+        echo '<option value="'.$value['player_id'].'">';
+        echo $value['player_firstname'].' '.$value['player_lastname'];
+        echo '</option>'."\n";
+    }
+}
+
+function afficherJoueurOptionsSelectionne($mabd, $idJoueur) {
+    $req = "SELECT * FROM atp_player";
+    try {
+        $resultat = $mabd->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    foreach ($resultat as $value) {
+        echo '<option value="'.$value['player_id'].'"';
+        if ($value['player_id']==$idJoueur) {
+            echo ' selected';
         }
+        echo '>';
+        echo $value['player_firstname'].' '.$value['player_lastname'];
+        echo '</option>'."\n";
+    }
 }
 
 function ajouterJoueur($mabd, $prenom, $nom, $nation, $age, $taille, $classement, $point, $image)
@@ -146,7 +166,7 @@ function ajouterJoueur($mabd, $prenom, $nom, $nation, $age, $taille, $classement
         die();
     }
     if ($resultat->rowCount() == 1) {
-        echo '<p>Le joueur ' . $prenom . ' '. $nom . ' a été ajoutée au catalogue.</p>' . "\n";
+        echo '<p>Le joueur ' . $prenom . ' '. $nom . ' a été ajouté au catalogue.</p>' . "\n";
     } else {
         echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
         die();
@@ -155,7 +175,6 @@ function ajouterJoueur($mabd, $prenom, $nom, $nation, $age, $taille, $classement
 
 function effaceJoueur($mabd, $id) {
     $req = "DELETE FROM `atp_player` WHERE player_id=".$id;
-    echo '<p>'.$req.'</p>'."\n";
     try{
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -164,7 +183,7 @@ function effaceJoueur($mabd, $id) {
         die();
     }
     if ($resultat->rowCount()==1) {
-        echo '<p>Le joueur '.$id.' a été supprimé du catalogue.</p>'."\n";
+        echo '<p>Le joueur n°'.$id.' a été supprimé du catalogue.</p>'."\n";
     } else {
         echo '<p>Erreur lors de la suppression.</p>'."\n";
         die();
@@ -174,7 +193,6 @@ function effaceJoueur($mabd, $id) {
 // fonction de récupération des informations d'une BD
 function getJoueur($mabd, $idJoueur) {
     $req = "SELECT * FROM `atp_player` WHERE player_id = ".$idJoueur;
-    echo '<p>GetJoueur() : '.$req.'</p>'."\n";
     try {
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -189,8 +207,7 @@ function getJoueur($mabd, $idJoueur) {
 
 function modifierJoueur($mabd, $id, $prenom, $nom, $nation, $age, $taille, $classement, $point, $image)
 {
-    $req = "UPDATE `atp_player` SET `player_id` = '".$classement."', `player_firstname` = '".$prenom."', `player_lastname` = '".$nom."', `player_nation` = '".$nation."', `player_age` = '".$age."', `player_height` = '".$taille."', `player_atprank` = '".$classement."', `player_atppoint` = '".$point."', `image_name` = '".$image."', WHERE `atp_player`.`player_id` =".$id;
-    echo '<p>' . $req . '</p>' . "\n";
+    $req = "UPDATE `atp_player` SET `player_id` = '".$classement."', `player_firstname` = '".$prenom."', `player_lastname` = '".$nom."', `player_nation` = '".$nation."', `player_age` = '".$age."', `player_height` = '".$taille."', `player_atprank` = '".$classement."', `player_atppoint` = '".$point."', `image_name` = '".$image."' WHERE player_id =".$id;
     try {
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -248,7 +265,6 @@ function ajouterTournoi($mabd, $countrie, $city, $date, $type, $gagnant, $image)
 
 function effaceTournoi($mabd, $id) {
     $req = "DELETE FROM `atp_tournament` WHERE tournoi_id=".$id;
-    echo '<p>'.$req.'</p>'."\n";
     try{
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -267,7 +283,6 @@ function effaceTournoi($mabd, $id) {
 // fonction de récupération des informations d'une BD
 function getTournoi($mabd, $idTournoi) {
     $req = "SELECT * FROM `atp_tournament` WHERE tournoi_id = ".$idTournoi;
-    echo '<p>GetJoueur() : '.$req.'</p>'."\n";
     try {
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -283,7 +298,6 @@ function getTournoi($mabd, $idTournoi) {
 function modifierTournoi($mabd, $id, $countrie, $city, $date, $type, $gagnant, $image)
 {
     $req = "UPDATE `atp_tournament` SET `tournoi_countrie` = '".$countrie."', `tournoi_city` = '".$city."', `tournoi_day` = '".$date."', `winner_id` = '".$gagnant."', `tournoi_type` = '".$type."', `image_name_tournament` = '".$image."' WHERE tournoi_id =".$id;
-    echo '<p>' . $req . '</p>' . "\n";
     try {
         $resultat = $mabd->query($req);
     } catch (PDOException $e) {
@@ -308,26 +322,18 @@ function afficherListeTournoi($mabd) {
         print "Erreur : ".$e->getMessage().'<br />';
         die();
     }
-
-
-    echo '</div>';
-    echo '<table>'."\n";
-    echo '<thead><tr><th>Image</th><th>Pays</th><th>Ville</th><th>Date</th><th>Vaiqueur</th><th>Type</th><th>Modifier</th><th>Supprimer</th></tr></thead>'."\n";
-    echo '<tbody>'."\n";
-    foreach ($resultat as $value) {
-        echo '<tr>'."\n";
-        echo '<td><img class="photo" src="../img/bds/'.$value['image_name_tournament'].'" width="50" height="50" alt="image_'.$value['tournoi_id'].'" /></td>'."\n";
-        echo '<td>'.$value['tournoi_countrie'].'</td>'."\n";
-        echo '<td>'.$value['tournoi_city'].'</td>'."\n";
-        echo '<td>'.$value['tournoi_day'].'</td>'."\n";
-        echo '<td>'.$value['player_firstname'].' '.$value['player_lastname'].'</td>'."\n";
-        echo '<td>'.$value['tournoi_type'].'</td>'."\n";
-        echo '<td><a href="table2_update_form.php?num='.$value['tournoi_id'].'">Modifier</a></td>'."\n";
-        echo '<td><a href="table2_delete.php?num=' .$value['tournoi_id'].'">Supprimer</a></td>'."\n";
-        echo '</tr>'."\n";
+    echo '<div class="titre-section"><h2 class="text-white mgtoptournoi h2">Tournois ATP</h2></div>';
+    echo '<div class="classement">';
+    while ($ligne = $resultat->fetch()) {
+        echo '<div class="fiche_player">';
+        echo '<img src="../images/uploads/'.$ligne['image_name_tournament'].'" alt="'.$ligne['tournoi_city'].' '.$ligne['tournoi_countrie'].'" height="112" width="200">';
+        echo '<h4>'.$ligne['tournoi_city'].', '.$ligne['tournoi_countrie'].'</h4>';
+        echo '<p>Date : '.$ligne['tournoi_day'].' <br /> Type : '.$ligne['tournoi_type'].'</p>';
+        echo '<h4> 🏆'.$ligne['player_firstname'].' '.$ligne['player_lastname'].'</h4>';
+        echo '<a href="table2_update_form.php?num='.$ligne['tournoi_id'].'">Modifier</a>'."\n";
+        echo '<a href="table2_delete.php?num=' .$ligne['tournoi_id'].'">Supprimer</a></div>'."\n";
     }
-    echo '</tbody>'."\n";
-    echo '</table>'."\n";
+    echo '</div>';
 }
 
 function genererDatalistJoueur($mabd) {
