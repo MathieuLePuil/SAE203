@@ -166,7 +166,7 @@ function ajouterJoueur($mabd, $prenom, $nom, $nation, $age, $taille, $classement
         die();
     }
     if ($resultat->rowCount() == 1) {
-        echo '<p>Le joueur ' . $prenom . ' '. $nom . ' a été ajouté au catalogue.</p>' . "\n";
+        echo '<p>Le joueur ' . $prenom . ' '. $nom . ' a été ajouté à la liste.</p>' . "\n";
     } else {
         echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
         die();
@@ -183,7 +183,7 @@ function effaceJoueur($mabd, $id) {
         die();
     }
     if ($resultat->rowCount()==1) {
-        echo '<p>Le joueur n°'.$id.' a été supprimé du catalogue.</p>'."\n";
+        echo '<p>Le joueur n°'.$id.' a été supprimé de la liste.</p>'."\n";
     } else {
         echo '<p>Erreur lors de la suppression.</p>'."\n";
         die();
@@ -275,7 +275,7 @@ function ajouterTournoi($mabd, $countrie, $city, $date, $type, $gagnant, $image)
         die();
     }
     if ($resultat->rowCount() == 1) {
-        echo '<p>Le tournoi de ' . $countrie . ' en '. $city . ' a été ajoutée à la liste.</p>' . "\n";
+        echo '<p>Le tournoi de ' . $city. ' en '. $countrie . ' a été ajoutée à la liste.</p>' . "\n";
     } else {
         echo '<p>Erreur lors de l\'ajout.</p>' . "\n";
         die();
@@ -292,7 +292,7 @@ function effaceTournoi($mabd, $id) {
         die();
     }
     if ($resultat->rowCount()==1) {
-        echo '<p>Le tournoi '.$id.' a été supprimé du catalogue.</p>'."\n";
+        echo '<p>Le tournoi '.$id.' a été supprimé de la liste.</p>'."\n";
     } else {
         echo '<p>Erreur lors de la suppression.</p>'."\n";
         die();
@@ -404,7 +404,7 @@ function afficherResultatRechercheNom($mabd, $prenom, $nom)
         // oui : pour chaque résultat : afficher
         while ($ligne = $resultat->fetch()) {
             echo '<div class="fiche_player">';
-            echo '<img src="img/bds/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
+            echo '<img src="images/uploads/' . $ligne['image_name'] . '" alt="' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '" height="200" width="200">';
             echo '<h4>' . $ligne['player_firstname'] . ' ' . $ligne['player_lastname'] . '</h4>';
             echo '<p>Pays : ' . $ligne['player_nation'] . ' <br /> Âge : ' . $ligne['player_age'] . ' <br /> Taille : ' . $ligne['player_height'] . ' <br /> Classement ATP : ' . $ligne['player_atprank'] . ' <br /> Point ATP : ' . $ligne['player_atppoint'] . '</p></div>';
         }
